@@ -1,4 +1,9 @@
 Symbol,Name,Last Sale,Net Change,% Change,Market Cap,Country,IPO_Year,Volume,Sector,Industry
+IWDA.L, 
+EIMI.L, 
+EMVL.L, 
+USSC.L, 
+IWVL.L,
 A,Agilent Technologies Inc. Common Stock,$153.115,1.835,1.213%,44871159810.00,United States,1999,414065,Industrials,Electrical Products
 AA,Alcoa Corporation Common Stock ,$39.24,-0.59,-1.481%,7045922157.00,United States,2016,1668372,Industrials,Aluminum
 AACG,ATA Creativity Global American Depositary Shares,$0.9101,-0.0098,-1.065%,29123318.00,China,2008,5314,Real Estate,Other Consumer Services

@@ -42,7 +42,13 @@ def add_dfForm():
             'Name':"",
             '%':[st.session_state.input_colC]})
     st.session_state.data = pd.concat([st.session_state.data, row])
-    
+
+def remove_dfForm():
+    if data.empty:
+        pass
+    else:
+        #data.drop(data.tail(1).index,inplace=True)   
+        st.session_state.data = st.session_state.data[:-1]
 
 def loading():
     with st.spinner("Carregando..."):
@@ -79,9 +85,17 @@ with dfForm:
                         max_value= max_value_percentage, 
                         value='min', 
                         key='input_colC')
-    st.form_submit_button(
-        on_click=add_dfForm,
-        label="Adicionar Ativo")
+        
+    dfColumns2 = st.columns(2)
+    with dfColumns2[0]:
+        st.form_submit_button(
+            on_click=add_dfForm,
+            label="Adicionar Ativo")
+        
+    with dfColumns2[1]:
+        st.form_submit_button(
+            on_click=remove_dfForm,
+            label="Remover último Ativo")
 
 # Verifica se tickers foram preenchidos
 if len(data['Stock'].index) != 0:

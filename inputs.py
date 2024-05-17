@@ -29,10 +29,11 @@ data = st.session_state.data
 
 #Opening CSV file with tickers info
 with open("nasdaq_screener.csv") as f:
-    ticker_names_bd = [row.split(',')[0] for row in f]
+    ticker_names_bd = [row.rstrip('\n').split(',')[1] for row in f]
 
 #st.write(ticker_names_bd[0:10])
 #st.dataframe(data)
+
 tickers = data['Stock'].values.tolist()
 
 def add_dfForm():

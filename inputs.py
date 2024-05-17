@@ -13,6 +13,17 @@ from pypfopt import CLA
 from pypfopt import DiscreteAllocation
 from pypfopt import EfficientFrontier
 
+st.set_page_config(
+    page_title="Diag. de Carteira",
+    page_icon=":heavy_dollar_sign:",
+    layout="centered",
+    initial_sidebar_state="collapsed",
+    menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    }
+)
 
 st.title('Diagnóstico de Carteira')
 st.divider()
@@ -95,8 +106,17 @@ with dfForm:
     with dfColumns2[1]:
         st.form_submit_button(
             on_click=remove_dfForm,
-            label="Remover último Ativo")
+            label="Remover último Ativo"
+            )
+        
+if data.empty:
+    st.subheader("Sobre este App")
+    st.markdown("""
+    Este aplicativo foi desenvolvido por [J.V.S](https://www.linkedin.com/in/jo%C3%A3o-vin%C3%ADcius-schultz-1953789a/).
 
+
+    Você pode ver como ele funciona em detalhes através do [Github](https://github.com/bored-engnr/backtesting).
+                """)
 # Verifica se tickers foram preenchidos
 if len(data['Stock'].index) != 0:
     loading()
